@@ -1,17 +1,18 @@
 package com.jedk1.projectkorra.mobs;
 
+import java.util.logging.Logger;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
 import com.jedk1.projectkorra.mobs.ability.air.AirAbility;
 import com.jedk1.projectkorra.mobs.ability.earth.EarthAbility;
 import com.jedk1.projectkorra.mobs.ability.fire.FireAbility;
 import com.jedk1.projectkorra.mobs.ability.water.WaterAbility;
+import com.jedk1.projectkorra.mobs.commands.Spawn;
 import com.jedk1.projectkorra.mobs.config.ConfigManager;
 import com.jedk1.projectkorra.mobs.listener.MobListener;
 import com.jedk1.projectkorra.mobs.manager.AbilityManager;
 import com.jedk1.projectkorra.mobs.manager.EntityManager;
-
-import org.bukkit.plugin.java.JavaPlugin;
-
-import java.util.logging.Logger;
 
 public class ProjectKorraMobs extends JavaPlugin {
 
@@ -28,6 +29,7 @@ public class ProjectKorraMobs extends JavaPlugin {
 		MobMethods.registerEntityTypes();
 		getServer().getPluginManager().registerEvents(new MobListener(this), this);
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new AbilityManager(),0L, 1L);
+		new Spawn();
 	}
 	
 	@Override

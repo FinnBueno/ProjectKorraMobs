@@ -3,3 +3,8 @@ version: 1.0.4
 main: com.jedk1.projectkorra.mobs.ProjectKorraMobs
 authors: ['jedk1']
 depend: ['ProjectKorra']
+
+commands:
+  pkm:
+    aliases: [projectkorramobs,pkmobs,bm,bmods,bendingmobs]
+    usage: /<command>
